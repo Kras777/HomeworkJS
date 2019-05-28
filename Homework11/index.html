@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework-buttons</title>
+    <style>
+        .btn-wrapper {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 20px;
+            min-width: 120px;
+            padding: 7px;
+            color: #fff;
+            font-size: 14px;
+            background-color: #33333a;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: blue;
+        }
+
+        .btn:active,
+        .btn:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+<div class="btn-wrapper">
+    <button id="enter" class="btn">Enter</button>
+    <button id="s" class="btn">S</button>
+    <button id="e" class="btn">E</button>
+    <button id="o" class="btn">O</button>
+    <button id="n" class="btn">N</button>
+    <button id="l" class="btn">L</button>
+    <button id="z" class="btn">Z</button>
+</div>
+<script>
+
+    let selectedTarget = null;
+    document.onkeypress = function (event) {
+
+        if (selectedTarget) {
+            selectedTarget.classList.remove('active');
+        }
+        selectedTarget = document.getElementById(event.key.toLowerCase());
+        selectedTarget.classList.add('active');
+
+    }
+
+</script>
+</body>
+</html>
